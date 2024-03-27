@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3000; // Choose any available port
 
-// Serve your HTML file directly
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
+
+app.use(express.static('static'));
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+
